@@ -6,7 +6,7 @@ class AlphabetFreq
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter any string: ");
         String s = br.readLine();
-       s=s.toLowerCase(); 
+        s=s.toLowerCase(); 
         int l=s.length();
         char ch;
         System.out.println("Output:");
