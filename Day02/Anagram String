@@ -1,0 +1,30 @@
+import java.util.*;
+public class Anagram
+{
+    public static void main()
+    {
+        Scanner in=new Scanner(System.in);
+        System.out.println("ENTER FIRST WORD :");
+        String s=in.nextLine();
+        System.out.println("ENTER SECOND WORD :");
+        String s1=in.nextLine();
+        int i,j,l=0;
+        if(s.length()==s1.length())
+        {
+            for(i=0;i<s.length();i++)
+            {
+                for(j=0;j<s1.length();j++)
+                {
+                    if((s.charAt(i))==(s1.charAt(j)))
+                        l=l+1;
+                }
+            }
+            if((l==s.length())&&(l==s1.length()))
+                System.out.println("IT'S A ANAGRAM WORD .");
+            else
+                System.out.println("IT'S NOT A ANAGRAM WORD .");
+        }
+        else
+            System.out.println("IT'S NOT A ANAGRAM WORD .");
+    }
+}
