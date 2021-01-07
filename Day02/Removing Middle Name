@@ -1,0 +1,22 @@
+public class delete_middle
+{
+    public static void main(String s)
+    {
+        String s1="",s2="";
+        s=s.trim();
+        for(int i=0;i<s.length();i++)
+        {
+            char ch=s.charAt(i);
+            if(ch==' ')
+                break;
+            else
+                s1=s1+ch;
+        }
+        int l=s.lastIndexOf(" ");
+        for(int i=l;i<s.length();i++)
+        {
+            s2=s2+s.charAt(i);
+        }
+        System.out.println("NEW STRING : "+(s1+" "+s2));
+    }
+}
