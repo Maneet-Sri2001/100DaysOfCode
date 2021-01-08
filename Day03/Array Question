@@ -1,0 +1,37 @@
+// Program to print the Diagonal Elements of 2D-Array
+
+import java.util.*;
+class DDA_Diagonal
+{
+    public static void main(String args[])
+    {
+        Scanner in=new Scanner(System.in);
+        System.out.println("ENTER VALUE OF ROW :");
+        int n=in.nextInt();
+        System.out.println("ENTER VALUE OF COLUMN :");
+        int m=in.nextInt();
+        int a[][]=new int[n][m];
+        System.out.println("ENTER ELEMENTS :");
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+                a[i][j]=in.nextInt();
+        }
+        System.out.println("\f");
+        System.out.println("ELEMENT IN ARRAY ARE :\n");
+        int l=0,u=n-1;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                if(i==j)
+                    System.out.print(a[i][j]+" ");
+                else if(i+j==n-1)
+                    System.out.print(a[i][j]+" ");
+                else
+                    System.out.print("  ");
+            }
+            System.out.println();
+        }
+    }
+}
