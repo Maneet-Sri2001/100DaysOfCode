@@ -1,0 +1,46 @@
+// Program to print Diamond Pattern
+
+import java.util.*;
+class Diamond
+{
+    public static void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        int i,j,l,m,n;
+        char ch;
+        String s;
+        System.out.println("ENTER YOUR WORD");
+        s=sc.nextLine();
+        l=s.length();
+        //System.out.println("\f");
+        n=l-1;
+        for(i=0;i<l;i++)
+        {
+            for(j=n;j>0;j--)
+                System.out.print(" ");
+            for(j=0;j<=i;j++)
+            {
+                ch=s.charAt(j);
+
+                System.out.print(ch+" ");
+            }
+            System.out.println();
+            n--;
+        }
+        n=l-1;
+        char c;
+        for(i=0;i<l;i++)
+        {
+            for(j=1;j<=i;j++)
+                System.out.print(" ");
+            for(j=n;j>=0;j--)
+            {
+                c=s.charAt(j);
+                System.out.print(c+" ");
+            }
+            
+            System.out.println();
+            n--;
+        }
+    }
+}
