@@ -1,0 +1,100 @@
+// Program to find Saddle Point of a Matrix
+
+import java.io.*;
+class SaddlePoint
+{
+   public static void main(String args[])throws IOException
+   {
+       BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+       System.out.print("Enter the order of the matrix : ");
+       int n=Integer.parseInt(br.readLine());
+       int A[][]=new int[n][n];
+       System.out.println("Inputting the elements in the matrix");
+       System.out.println("******************************"); // Ignore
+       for(int i=0;i<n;i++)
+       {
+         for(int j=0;j<n;j++)
+         {
+             System.out.print("Enter Element at ["+i+"]["+j+"] : ");
+             A[i][j]=Integer.parseInt(br.readLine());
+         }
+       }
+       /* Printing the Original Matrix */
+       System.out.println("******************************");
+       System.out.println("The Original Matrix is");
+       for(int i=0;i<n;i++)
+       {
+         for(int j=0;j<n;j++)
+         {
+             System.out.print(A[i][j]+"\t");
+         }
+         System.out.println();
+       }
+       int max, min, x, f=0;
+       for(int i=0;i<n;i++)
+       {
+           /* Finding the minimum element of a row */
+           min = A[i][0]; // Initializing min with first element of every row..
+           x = 0;
+           for(int j=0;j<n;j++)
+           {
+                if(A[i][j]<min)
+                {
+                    min = A[i][j];
+                    x = j; // Saving the column position of the minimum
+                }
+           }
+           /* Finding the maximum element in the column
+            * corresponding to the minimum element of row */
+           max = A[0][x]; // Initializing max with first element of thaat column
+           for(int k=0;k<n;k++)
+           {
+                if(A[k][x]>max)
+                {
+                    max = A[k][x];
+                }
+           }
+         /* If the minimum of a row is same as maximum of the corresponding column
+               then, we have that element as the Saddle point */
+           if(max==min)
+           {
+               System.out.println("********************");
+               System.out.println("Saddle point = "+max);
+               System.out.println("********************");
+               f=1;
+           }
+       }
+       if(f==0)
+       {
+           System.out.println("********************");
+           System.out.println("No saddle point");
+           System.out.println("********************");
+       }
+   }
+}
+
+
+
+Output :
+
+Enter the order of the matrix : 3
+Inputting the elements in the matrix
+******************************
+Enter Element at [0][0] : 1
+Enter Element at [0][1] : 2
+Enter Element at [0][2] : 3
+Enter Element at [1][0] : 4
+Enter Element at [1][1] : 5
+Enter Element at [1][2] : 6
+Enter Element at [2][0] : 7
+Enter Element at [2][1] : 8
+Enter Element at [2][2] : 9
+******************************
+The Original Matrix is
+1	2	3	
+4	5	6	
+7	8	9	
+********************
+Saddle point = 7
+********************
+
