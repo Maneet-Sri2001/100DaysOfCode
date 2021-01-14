@@ -1,0 +1,34 @@
+import java.util.*;
+class roman_no
+{
+    public static void main(String args[])
+    {
+        Scanner in=new Scanner(System.in);
+        System.out.println("ENTER NO. :");
+        int n=in.nextInt();
+        if(n>=0&&n<=4000)
+        {
+             String thousand[]={"","M","MM","MMM"};
+            String hundred[]={"","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"};
+            String tens[]={"","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"};
+            String unit[]={"","I","II","III","IV","V","VI","VII","VIII","IX"};
+            int th=n/1000;
+            int h=(n/100)%10;
+            int t=(n/10)%10;
+            int u=n%10;
+            System . out .println(n+" ITS ROMAN NO IS : " +thousand[th]+hundred[h]+tens[t]+unit[u]);
+        }
+        else
+        System.out.println("ENTER A ZERO TO FOUR DIGIT NUMBER");
+    }
+}
+
+
+Output : 
+
+ENTER NO. :
+76076
+ENTER A ZERO TO FOUR DIGIT NUMBER
+ENTER NO. :
+0012
+12 ITS ROMAN NO IS : XII
