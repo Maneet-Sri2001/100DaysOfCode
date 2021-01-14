@@ -1,0 +1,127 @@
+import java.io.*;
+class sort_search
+{
+    public static void main(String []args)throws IOException
+    {
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter your choice to 1. Sort or 2. Search.");
+        int a=Integer.parseInt(br.readLine());
+        switch(a)
+        {
+            case 1:
+            {
+                System.out.println("You have selected a sorting option.");
+                System.out.println("Enter your choice to selection or bubble.");
+                int s=Integer.parseInt(br.readLine());;
+                switch(s)
+                {
+                    case 1:
+                    {
+                        System.out.println("Your choice is selection sorting.");
+                        int i,j,temp;
+                        System.out.println("Enter the size of array.");
+                        int n=Integer.parseInt(br.readLine());
+                        int b[]=new int[n];   
+                        System.out.println("ENTER ARRAYS ELEMENTS");       
+                        for(i=0;i<n;i++)
+                        {
+                            b[i]=Integer.parseInt(br.readLine());
+                        }
+                        System.out.println("SORTING STARTS");
+                        for(i=0;i<n;i++)
+                        {
+                            for(j=i+1;j<n;j++)
+                            {if(b[i]>b[j])
+                                {
+                                    temp=b[i];
+                                    b[i]=b[j];
+                                    b[j]=temp;
+                                }
+                            }
+                        }
+                        for(i=0;i<n;i++)
+                        {
+                            System.out.println(b[i]);
+                        }
+                        break;
+                    }
+                    case 2:
+                    {
+                        System.out.println("Your choice is bubble sorting.");
+                        int i,j,pos;
+                        System.out.println("Enter the size of array.");
+                        int n=Integer.parseInt(br.readLine());
+                        int c[]=new int[n];
+                        System.out.println(" Enter Array elements");
+                        for(i=0;i<n;i++)
+                        {
+                            c[i]= Integer.parseInt(br.readLine());
+                        }
+                        System.out.println(" sorting starts");
+                        for(i=0;i<n;i++)
+                        {
+                            for(j=0;j<n-1;j++)
+                            {
+                                if(c[j]<c[j+1])
+                                {
+                                    pos=c[j];
+                                    c[j]=c[j+1];
+                                    c[j+1]=pos;
+
+                                }
+                            }
+                        }
+                        for(i=0;i<n;i++)
+                        { 
+                            System.out.println(c[i]);
+                        }
+                        break;
+                    }
+                    default:
+                    {
+                        System.out.println("Your choice is wrong.");
+                        break;
+                    }
+                }
+                break;
+            }
+            case 2:
+            {
+
+                System.out.println("You have selected a searching option.");
+                System.out.println("Enter the size of array.");
+                int n=Integer.parseInt(br.readLine());
+                int kl[]=new int[n];
+                System.out.println("Enter the number to be searched.");
+                int d=Integer.parseInt(br.readLine());;
+                int i,j=0,lb=0,ub=n-1,mid,l=0;
+                for(i=0;i<n;i++)
+                {
+                    System.out.println("Enter the "+(i+1)+" element : ");
+                    kl[i]=Integer.parseInt(br.readLine());;
+                }
+                while(lb<=ub)
+                {mid=(lb+ub)/2;
+                    if(kl[mid]>d)
+                        ub=mid-1;
+                    else if(kl[mid]<d)
+                        lb=mid+1;
+                    else 
+                        j=1;
+                    l=kl[mid];
+                    break;
+                }
+                if(j==1)
+                {
+                    System.out.println("The number is present and its place is : "+l);
+                }
+                else
+                {System.out.println("The number is absent.");
+                }
+                break;
+            }
+        }
+    }
+}
+
+                
