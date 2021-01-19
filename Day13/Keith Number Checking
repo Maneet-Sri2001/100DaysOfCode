@@ -1,0 +1,37 @@
+// An n-digit number N is a Keith Number if it forms a Fibonacci-like sequence that begins with the digits of the number itself. 
+// The most significant digit is followed by the rest of the digits. 
+// 14, 19, 28, 47, 61, 75, 197, 742, 1104, 1537, 2208, 2580, … are some of the Keith Numbers.
+
+import java.io.*;
+class Keith
+{
+public static void main(String args[])throws IOException
+    {
+     BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+     System.out.print("Enter the number : "); 
+     int n=Integer.parseInt(br.readLine());
+     int copy=n;
+     String s=Integer.toString(n);
+     int d=s.length(); 
+     int arr[]=new int[n]; 
+     for(int i=d-1; i>=0; i--)
+     {
+ arr[i]=copy%10; 
+         copy=copy/10;
+     }
+     int i=d,sum=0;
+  while(sum<n)
+     {
+         sum = 0;
+         for(int j=1; j<=d; j++)
+         {
+             sum=sum+arr[i-j];
+         }
+         arr[i]=sum; 
+         i++;
+     }
+     if(sum==n) 
+        System.out.println("The number is a Keith Number");
+     else
+        System.out.println("The number is a not a Keith Number");
+    }}
