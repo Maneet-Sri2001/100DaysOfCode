@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class MagicName 
+{
+    static int sum(int n) 
+    {
+        int r,s=0;
+        while (n>0) 
+        {
+            r=n%10;
+            s=s+r;
+            n=n/10;
+        }
+        return s;
+    }
+    public static void main(String args[]) 
+    {
+        Scanner in=new Scanner(System.in);
+        String s;
+        int i,j,sum=0,n;
+        System.out.println("Enter A Name :");
+        s=in.nextLine();
+        for (i=0;i<s.length();i++) {
+            sum=sum+(int)s.charAt(i);
+        }
+        n=sum;
+        while (sum>10) 
+        {
+            sum=sum(sum);
+        }
+        System.out.println("Sum of ASCII Value in "+s+" is :"+sum);
+    }
+}
