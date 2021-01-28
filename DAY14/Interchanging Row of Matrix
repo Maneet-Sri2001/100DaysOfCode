@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+public class InterchangeRows {
+    public static void main(String args[]) {
+        Scanner in=new Scanner(System.in);
+        int n,i,j,r1,r2,t,m;
+        System.out.println("Enter Row and Column of Matrix :");
+        n=in.nextInt();
+        m=in.nextInt();
+        int arr[][]=new int[n][m];
+        System.out.println("Enter Values in Matrix :");
+        for (i=0;i<n;i++)
+            for (j=0;j<m;j++)
+                arr[i][j]=in.nextInt();
+        System.out.println("/f");
+        System.out.println("Matrix : ");
+        for (i=0;i<n;i++) {
+            for (j = 0; j < m; j++)
+                System.out.print(arr[i][j] + "\t");
+            System.out.println();
+        }
+        System.out.println("Enter the Values Of Row you want to Interchange");
+        r1=in.nextInt()-1;
+        r2=in.nextInt()-1;
+        System.out.println("/f");
+        System.out.println("Original Matrix : ");
+        for (i=0;i<n;i++) {
+            for (j = 0; j < m; j++)
+                System.out.print(arr[i][j] + "\t");
+            System.out.println();
+        }
+        System.out.println("Interchanged Matrix : ");
+        for (i=0;i<m;i++) {
+            t=arr[r1][i];
+            arr[r1][i]=arr[r2][i];
+            arr[r2][i]=t;
+        }
+        for (i=0;i<n;i++) {
+            for (j = 0; j < m; j++)
+                System.out.print(arr[i][j] + "\t");
+            System.out.println();
+        }
+    }
+}
+
+
+Output ::
+Enter Row and Column of Matrix :
+3
+4
+Enter Values in Matrix :
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+
+Matrix : 
+1	2	3	4	
+5	6	7	8	
+9	10	11	12	
+Enter the Values Of Row you want to Interchange
+0
+2
+
+Original Matrix : 
+1	2	3	4	
+5	6	7	8	
+9	10	11	12	
+Interchanged Matrix : 
+9	10	11	12	
+5	6	7	8	
+1	2	3	4	
